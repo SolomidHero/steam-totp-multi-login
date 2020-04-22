@@ -23,15 +23,29 @@ Simply fill the credentials of your accounts to `data.json` file in format:
 
 Remember other credentials stored only for better usabilty of tool and not necessary for Steam Guard Code generation.
 
+Then generate Steam Guard token (you can specify many of account names):
+```bash
+node index.js %USERNAME%
+node index.js %USERNAME_1% %USERNAME_2% .. %USERNAME_N%
+```
+
 ## Example
+
 ```bash
 node index.js account_username
 
-#{
-#  "account_username": {
-#    "shared": "1234567890abcdef12345678900=",
-#    "pass": "qwerty123"
-#  }
-#}
+# account_username:
+#   qwerty123
+#   12345
 ```
+or verbose version
 
+```bash
+node index.js -v account_username
+
+# account_username:
+#   shared: some_shared_secret
+#   identity: some_identity_secret
+#   pass: qwerty123
+#   12345
+```
